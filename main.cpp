@@ -161,9 +161,11 @@ public:
             cout << "List is empty" << endl;
             return;
         }
-
+        cout << "Forward:" << endl << "    ";
         while (current) {
-            cout << current->data.getName() << " ";
+            cout << current->data.getName() << " (";
+            cout << current->data.getColor() << ", ";
+            cout << current->data.getAge() << ")" << endl;
             current = current->next;
         }
 
@@ -177,9 +179,11 @@ public:
             cout << "List is empty" << endl;
             return;
         }
-
+        cout << "Backward:" << endl << "    ";
         while (current) {
-            cout << current->data.getName() << " ";
+            cout << current->data.getName() << " (";
+            cout << current->data.getColor() << ", ";
+            cout << current->data.getAge() << ")" << endl;
             current = current->prev;
         }
 
@@ -197,6 +201,9 @@ public:
 
 int main() {
     srand(time(0));
-
+    int s = rand() % (20-5) + 5;
+    for (int i = 0; i < s; i++) {
+        
+    }
     return 0;
 }
