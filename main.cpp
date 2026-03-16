@@ -1,8 +1,9 @@
 //COMSC 210 | Lab 21 | Alexander Sierra
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-const int SIZE = 15;
+const int SIZE = 15, W = 20;
 
 class Goat {
 private:
@@ -161,9 +162,9 @@ public:
             cout << "List is empty" << endl;
             return;
         }
-        cout << "Forward:" << endl << "    ";
+        
         while (current) {
-            cout << current->data.getName() << " (";
+            cout << setw(W) << current->data.getName() << " (";
             cout << current->data.getColor() << ", ";
             cout << current->data.getAge() << ")" << endl;
             current = current->next;
@@ -179,9 +180,9 @@ public:
             cout << "List is empty" << endl;
             return;
         }
-        cout << "Backward:" << endl << "    ";
+        
         while (current) {
-            cout << current->data.getName() << " (";
+            cout << setw(W) << current->data.getName() << " (";
             cout << current->data.getColor() << ", ";
             cout << current->data.getAge() << ")" << endl;
             current = current->prev;
@@ -201,9 +202,16 @@ public:
 
 int main() {
     srand(time(0));
+    DoublyLinkedList list;
     int s = rand() % (20-5) + 5;
     for (int i = 0; i < s; i++) {
-        
+        Goat *g = new Goat;
+        list.push_back(*g);
     }
+    cout << "Forward:" << endl;
+    list.print();
+    cout << endl;
+    cout << "Backward:" << endl;
+    list.print_reverse();
     return 0;
 }
