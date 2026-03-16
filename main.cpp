@@ -3,7 +3,7 @@
 #include <iomanip>
 using namespace std;
 
-const int SIZE = 15, W = 20;
+const int SIZE = 15, W = 10;
 
 class Goat {
 private:
@@ -210,7 +210,6 @@ int main() {
     }
     cout << "Forward:" << endl;
     list.print();
-    cout << endl;
     cout << "Backward:" << endl;
     list.print_reverse();
     return 0;
