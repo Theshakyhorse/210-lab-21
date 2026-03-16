@@ -18,6 +18,7 @@ private:
     "Silver", "Spotted", "Speckled", "Black and White",
     "Brown and White", "Red", "Sandy"};
 public:
+    //constructors
     Goat() {
         age = rand() % (20-1) + 1;
         name = names[rand() % (SIZE-1)];
@@ -29,7 +30,10 @@ public:
         name = n;
         color = c;
     }
-
+    //getters
+    int getAge() {return age;}
+    string getName() {return name;}
+    string getColor() {return color;}
 };
 
 class DoublyLinkedList {
@@ -125,7 +129,9 @@ public:
 
         Node* temp = head;
 
-        while (temp && temp->data != g) {
+        while (temp && ((temp->data.getName() != g.getName()) && 
+        (temp->data.getAge() != g.getAge()) && 
+        (temp->data.getColor() != g.getColor()))) {
             temp = temp->next;
         }
 
@@ -151,10 +157,13 @@ public:
     void print() {
         Node* current = head;
 
-        if (!current) return;
+        if (!current) {
+            cout << "List is empty" << endl;
+            return;
+        }
 
         while (current) {
-            cout << current->data << " ";
+            cout << current->data.getName() << " ";
             current = current->next;
         }
 
@@ -164,10 +173,13 @@ public:
     void print_reverse() {
         Node* current = tail;
 
-        if (!current) return;
+        if (!current) {
+            cout << "List is empty" << endl;
+            return;
+        }
 
         while (current) {
-            cout << current->data << " ";
+            cout << current->data.getName() << " ";
             current = current->prev;
         }
 
