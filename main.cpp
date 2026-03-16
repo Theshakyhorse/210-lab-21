@@ -21,9 +21,9 @@ private:
 public:
     //constructors
     Goat() {
-        age = rand() % (20-1) + 1;
-        name = names[rand() % (SIZE-1)];
-        color = colors[rand() % (SIZE-1)];
+        age = rand() % 20 + 1;
+        name = names[rand() % SIZE];
+        color = colors[rand() % SIZE];
     }
 
     Goat(int a, string n, string c) {
@@ -203,7 +203,7 @@ public:
 int main() {
     srand(time(0));
     DoublyLinkedList list;
-    int s = rand() % (20-5) + 5;
+    int s = rand() % (20-5+1) + 5;
     for (int i = 0; i < s; i++) {
         Goat *g = new Goat;
         list.push_back(*g);
